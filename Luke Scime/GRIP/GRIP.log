@@ -1,0 +1,1188 @@
+Jan 15, 2019 8:54:00 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [PipelineRunner] Starting
+Jan 15, 2019 8:54:14 PM edu.wpi.grip.core.util.service.LoggingListener terminated
+INFO: [PipelineRunner] Terminated from: STOPPING
+Jan 15, 2019 8:54:14 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': SourceAddedEvent{source=CameraSource{name=IP Camera limelight.local}}
+Jan 15, 2019 8:54:14 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:14 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': SourceAddedEvent{source=ImageFileSource{name=mask1}}
+Jan 15, 2019 8:54:14 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=HSV Threshold}, index=OptionalInt[0]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Blur}, index=OptionalInt[1]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Mask}, index=OptionalInt[2]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=CV cvtColor}, index=OptionalInt[3]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Threshold Moving}, index=OptionalInt[4]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Find Min and Max}, index=OptionalInt[5]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Threshold Moving}, index=OptionalInt[6]}
+Jan 15, 2019 8:54:15 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=CV Threshold}, index=OptionalInt[7]}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=CV dilate}, index=OptionalInt[8]}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=CV bitwise_not}, index=OptionalInt[9]}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Mask}, index=OptionalInt[10]}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=CV cvtColor}, index=OptionalInt[11]}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': StepAddedEvent{step=Step{operation=Find Contours}, index=OptionalInt[12]}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Source/mask1/Image, dst=Step/HSV Threshold/Input}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/CV dilate/dst, dst=Step/CV bitwise_not/src1}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/CV cvtColor/dst, dst=Step/Threshold Moving/image}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Threshold Moving/moved, dst=Step/CV Threshold/src}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Blur/Output, dst=Step/Mask/Input}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/CV Threshold/dst, dst=Step/Mask/Input}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/HSV Threshold/Output, dst=Step/CV dilate/src}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/CV bitwise_not/dst, dst=Step/Mask/Mask}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Blur/Output, dst=Step/Threshold Moving/image}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Threshold Moving/moved, dst=Step/Find Min and Max/Image}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Source/IP Camera limelight.local/Image, dst=Step/Blur/Input}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Find Min and Max/Max Val, dst=Step/CV Threshold/maxval}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/HSV Threshold/Output, dst=Step/Mask/Mask}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': ConnectionAddedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/CV cvtColor/src}}
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': edu.wpi.grip.core.events.ProjectSettingsChangedEvent@777303fe
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'Project Open Thread': edu.wpi.grip.core.events.CodeGenerationSettingsChangedEvent@454723ad
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [PipelineRunner] Starting
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.Step runPerform
+WARNING: The Mask operation did not perform correctly.
+java.lang.RuntimeException: src\copy.cpp:382: error: (-215) size() == mask.size() in function cv::Mat::copyTo
+
+	at org.bytedeco.javacpp.opencv_core$Mat.copyTo(Native Method)
+	at edu.wpi.grip.core.operations.composite.MaskOperation.perform(MaskOperation.java:75)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:7564: error: (-215) scn == 3 || scn == 4 in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 8:54:16 PM edu.wpi.grip.core.Step runPerform
+WARNING: The Mask operation did not perform correctly.
+java.lang.RuntimeException: src\copy.cpp:382: error: (-215) size() == mask.size() in function cv::Mat::copyTo
+
+	at org.bytedeco.javacpp.opencv_core$Mat.copyTo(Native Method)
+	at edu.wpi.grip.core.operations.composite.MaskOperation.perform(MaskOperation.java:75)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 8:54:17 PM edu.wpi.grip.core.Step runPerform
+WARNING: The Mask operation did not perform correctly.
+java.lang.RuntimeException: src\copy.cpp:382: error: (-215) size() == mask.size() in function cv::Mat::copyTo
+
+	at org.bytedeco.javacpp.opencv_core$Mat.copyTo(Native Method)
+	at edu.wpi.grip.core.operations.composite.MaskOperation.perform(MaskOperation.java:75)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 8:54:17 PM edu.wpi.grip.core.operations.network.networktables.NTManager lambda$new$0
+INFO: NetworkTables: DsClient.cpp:139 client: DS overriding server IP to 10.56.24.2
+Jan 15, 2019 8:54:23 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:23 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 8:54:25 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:25 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:667)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:54:26 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:26 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:54:27 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:27 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:54:39 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:39 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 8:54:41 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:41 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:667)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:54:42 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:42 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:54:43 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:43 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:54:49 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:49 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 8:54:52 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:54:52 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:55:02 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:55:02 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 8:55:02 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepAddedEvent{step=Step{operation=CV Threshold}, index=OptionalInt[11]}
+Jan 15, 2019 8:55:04 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:55:04 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:667)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1536)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:55:05 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:55:05 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:55:06 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:55:06 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:55:35 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:55:35 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 8:55:38 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:55:38 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:55:54 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/CV Threshold/src}}
+Jan 15, 2019 8:57:36 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepRemovedEvent{step=Step{operation=CV Threshold}}
+Jan 15, 2019 8:57:36 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionRemovedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/CV Threshold/src}}
+Jan 15, 2019 8:57:37 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepRemovedEvent{step=Step{operation=CV cvtColor}}
+Jan 15, 2019 8:57:44 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepAddedEvent{step=Step{operation=HSV Threshold}, index=OptionalInt[11]}
+Jan 15, 2019 8:57:50 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/HSV Threshold/Input}}
+Jan 15, 2019 8:57:50 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:57:50 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 8:57:54 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 8:57:54 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 8:59:29 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepRemovedEvent{step=Step{operation=HSV Threshold}}
+Jan 15, 2019 8:59:29 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionRemovedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/HSV Threshold/Input}}
+Jan 15, 2019 9:00:36 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepAddedEvent{step=Step{operation=CV cvtColor}, index=OptionalInt[11]}
+Jan 15, 2019 9:01:27 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/CV cvtColor/src}}
+Jan 15, 2019 9:01:27 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:28 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:29 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:29 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:30 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:31 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:31 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:32 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:33 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:34 PM edu.wpi.grip.core.Step runPerform
+WARNING: The CV cvtColor operation did not perform correctly.
+java.lang.RuntimeException: src\color.cpp:8621: error: (-206) Unknown/unsupported color conversion code in function cv::cvtColor
+
+	at org.bytedeco.javacpp.opencv_imgproc.cvtColor(Native Method)
+	at edu.wpi.grip.core.operations.CVOperations.lambda$new$10(CVOperations.java:230)
+	at edu.wpi.grip.core.operations.templated.TwoSourceOneDestinationOperation.perform(TwoSourceOneDestinationOperation.java:46)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.Step.runPerform(Step.java:138)
+	at edu.wpi.grip.core.PipelineRunner.runPipeline(PipelineRunner.java:212)
+	at edu.wpi.grip.core.PipelineRunner.access$100(PipelineRunner.java:43)
+	at edu.wpi.grip.core.PipelineRunner$1.lambda$runOneIteration$1(PipelineRunner.java:91)
+	at edu.wpi.grip.core.metrics.Timer.time(Timer.java:102)
+	at edu.wpi.grip.core.PipelineRunner$1.runOneIteration(PipelineRunner.java:91)
+	at com.google.common.util.concurrent.AbstractScheduledService$ServiceDelegate$Task.run(AbstractScheduledService.java:188)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+Jan 15, 2019 9:01:34 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionRemovedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/CV cvtColor/src}}
+Jan 15, 2019 9:04:36 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:04:36 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 9:04:38 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepAddedEvent{step=Step{operation=RGB Threshold}, index=OptionalInt[11]}
+Jan 15, 2019 9:04:40 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:04:40 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 9:04:40 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepRemovedEvent{step=Step{operation=CV cvtColor}}
+Jan 15, 2019 9:04:47 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/Mask/Output, dst=Step/RGB Threshold/Input}}
+Jan 15, 2019 9:05:10 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:05:10 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 9:05:14 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:05:14 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 9:05:15 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:05:15 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
+Jan 15, 2019 9:06:39 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/RGB Threshold/Output, dst=Step/Find Contours/Input}}
+Jan 15, 2019 9:08:03 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': StepAddedEvent{step=Step{operation=NTPublish ContoursReport}, index=OptionalInt[13]}
+Jan 15, 2019 9:08:10 PM edu.wpi.grip.core.events.EventLogger eventPosted
+INFO: Event on thread 'JavaFX Application Thread': ConnectionAddedEvent{connection=Connection{src=Step/Find Contours/Contours, dst=Step/NTPublish ContoursReport/Data}}
+Jan 15, 2019 9:08:11 PM edu.wpi.grip.core.operations.network.networktables.NTManager lambda$new$0
+INFO: NetworkTables: Dispatcher.cpp:462 client: CONNECTED to server 10.56.24.2:1735 port 1735
+Jan 15, 2019 9:08:15 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:08:15 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: RUNNING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to grab image
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:75)
+	at edu.wpi.grip.core.sources.GrabberService.run(GrabberService.java:64)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:66)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:140)
+	at edu.wpi.grip.core.sources.GrabberService.runOneGrab(GrabberService.java:73)
+	... 4 more
+Caused by: java.io.EOFException: The camera stream ended unexpectedly
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.readImage(IPCameraFrameGrabber.java:181)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.grab(IPCameraFrameGrabber.java:133)
+	... 5 more
+
+Jan 15, 2019 9:08:18 PM edu.wpi.grip.core.util.service.LoggingListener starting
+INFO: [CameraSource] Starting
+Jan 15, 2019 9:08:18 PM edu.wpi.grip.core.util.service.LoggingListener failed
+SEVERE: [CameraSource] Failed from: STARTING
+edu.wpi.grip.core.sources.GrabberService$GrabberServiceException: [IP Camera limelight.local] Failed to start
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:54)
+	at com.google.common.util.concurrent.AbstractExecutionThreadService$1$2.run(AbstractExecutionThreadService.java:60)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.bytedeco.javacv.FrameGrabber$Exception: Connection refused: connect
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:102)
+	at edu.wpi.grip.core.sources.GrabberService.startUp(GrabberService.java:52)
+	... 3 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1513)
+	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1441)
+	at edu.wpi.grip.core.sources.IPCameraFrameGrabber.start(IPCameraFrameGrabber.java:99)
+	... 4 more
+
